@@ -1,0 +1,54 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to t("logo_link"), root_path, class: "logo" %>
+    <nav>
+    <ul class="nav navbar-nav navbar-left">
+        <li class="dropdown">
+          <%= link_to "#", "data-toggle": "dropdown", class: "dropdown-toggle" do %>
+            <%= t "category_header" %> <b class="caret"></b>
+          <% end %>
+          <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+            <%= render partial: "layouts/category", collection: @categories, as: :category %>
+          </ul>
+        </li>
+    </ul>
+      <div class="col-sm-3 col-md-3">
+      <%= form_tag products_path, method: :get, class: "navbar-form",
+        role: :search do %>
+        <div class="input-group">
+          <%= text_field_tag :search_by_name, "", class: "form-control" %>
+          <div class="input-group-btn">
+            <%= submit_tag t("search"), class: "btn btn-default" %>
+          </div>
+        </div>
+      <% end %>
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <%= link_to root_path do %>
+            <i class="fa fa-home"></i>
+            <%= t "home_link" %>
+          <% end %>
+        </li>
+        <% if logged_in? %>
+          <%= render "layouts/user" %>
+          <% if admin? %>
+            <%= render "layouts/admin" %>
+          <% end %>
+        <% else %>
+          <li>
+            <%= link_to login_path do %>
+              <i class="fa fa-sign-in"></i>
+              <%= t "login_link" %>
+            <% end %>
+          </li>
+        <% end %>
+        <li>
+          <%= link_to carts_path, type: "button", class: "btn btn-default btn-color" do %>
+            <%= render "layouts/cart_icon" %>
+          <% end %>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
