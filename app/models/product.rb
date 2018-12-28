@@ -25,6 +25,8 @@ class Product < ApplicationRecord
   scope :category_id, ->(category_id){where(category_id: category_id) if category_id.first.present?}
   scope :types, ->(product_type){where(product_type: product_type) if product_type.first.present?}
   scope :order_by, ->(column){order("#{column} asc")}
+  scope :get_hot_food, ->{where("category_id = 1 AND avg_rate > 4.5")}
+  scope :get_hot_drink, ->{where("category_id = 2 AND avg_rate > 4.5")}
   mount_uploaders :images, ImageUploader
 
   def change_in_cart quantity

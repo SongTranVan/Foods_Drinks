@@ -40,32 +40,263 @@ Category.create!(name: "Drinks")
 
 r = Random.new
 
-16.times do |n|
-  name = "Food #{n+1}"
-  description = "delecious, healthy, cheap"
-  price = r.rand(5..30)
-  quantity = 10
-  Product.create!(name: name,
-    description: description,
-    price: price,
-    inventory: quantity,
-    avg_rate: r.rand(1..5),
-    category_id: 1)
-end
 
-16.times do |n|
-  name = "Drink #{n+1}"
-  description = "fresh, healthy"
-  price = r.rand(5..30)
-  quantity = 10
-  Product.create!(name: name,
-    description: description,
-    price: price,
-    inventory: quantity,
-    product_type: "drink",
-    avg_rate: r.rand(1..5),
-    category_id: 2)
-end
+Product.create!(
+  name: "Bánh mì Chin Kitchen",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 4.3,
+  category_id: 1
+)
 
+Product.create!(
+  name: "Bánh tráng cuốn thịt heo Trần",
+  description: "Thơm ngon, bổ dưỡng",
+  price: 10,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 4.8,
+  category_id: 1
+)
 
+Product.create!(
+  name: "Bánh tráng kẹp CLC",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 3.5,
+  category_id: 1
+)
 
+Product.create!(
+  name: "Bún đậu",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 3.9,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Cháo ếch CLC",
+  description: "Ngon, bổ, rẻ",
+  price: 4,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 3.2,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Chè Thái Phiên",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 3.3,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Cơm gà xối mỡ",
+  description: "Ngon, bổ, rẻ",
+  price: 4,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 4.9,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Gà rán KFC",
+  description: "Ngon, bổ, rẻ",
+  price: 5,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 4.8,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Bánh bông lan King Castella",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 4.6,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Mì quảng Trần",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 4.9,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Bánh Napom",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 4.3,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Ram cuốn cải CLC",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 5,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Sushi CLC",
+  description: "Ngon, bổ, rẻ",
+  price: 5,
+  inventory: 10,
+  product_type: "food",
+  avg_rate: 2.5,
+  category_id: 1
+)
+
+Product.create!(
+  name: "Cafe Sài Gòn",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Trà bí đao ChiaChia",
+  description: "Ngon, bổ, rẻ",
+  price: 1,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Sinh tố Daisy",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 3.1,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Trà sữa DingTea",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4.6,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Trà đào Freeman",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4.7,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Trà sữa GongCha",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4.3,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Trà đào Honey Pea",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4.6,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Cafe Capuchino",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4.9,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Cafe Phố Đỏ",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 3.1,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Phúc Long Coffee",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4.8,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Trà sữa RoyalTea",
+  description: "Ngon, bổ, rẻ",
+  price: 3,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 4.1,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Sinh tố CLC",
+  description: "Ngon, bổ, rẻ",
+  price: 2,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 3.1,
+  category_id: 2
+)
+
+Product.create!(
+  name: "Trà sữa TocoToco",
+  description: "Nhấp nhô từng cảm xúc",
+  price: 3,
+  inventory: 10,
+  product_type: "drink",
+  avg_rate: 5,
+  category_id: 2
+)
