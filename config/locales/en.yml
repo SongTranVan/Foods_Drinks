@@ -31,7 +31,7 @@
 
 en:
   hello: "Hello world"
-  base_title: "Framgia Foods & Drinks"
+  base_title: "BTS Foods & Drinks"
   toggle_navigation: "Toggle navigation"
   logo_link: "Foods & Drinks"
   home_link: "Home"
@@ -62,6 +62,7 @@ en:
   edit: "Edit"
   search: "Search"
   category_header: "Categories"
+  description_lb: "Descripton"
   static_pages:
     home:
       title: "Home"
@@ -120,19 +121,21 @@ en:
       error: "error"
   admin:
     products:
+      name: "Product name"
+      description: "Descripton"
+      price: "Price"
+      quantity: "Quantity"
+      type: "Product type"
+      category: "Category"
+      image: "Add images"
+      title: "New Product"
+      header: "New Product"
+      create_product: "Create product"
+      new:
+        header: "New Product"
+        description_lb: "Descripton"
       create:
         success: "Product has been created!"
-      name_lb: "Product name"
-      description_lb: "Descripton"
-      price_lb: "Price"
-      quantity_lb: "Quantity"
-      type_lb: "Product type"
-      category_lb: "Category"
-      image_lb: "Add images"
-      new:
-        title: "New Product"
-        header: "New Product"
-        submit: "Create product"
       destroy:
         success: "Product has been destroyed"
         warning: "Failed to destroy this product"
