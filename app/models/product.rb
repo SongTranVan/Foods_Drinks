@@ -1,5 +1,5 @@
 class Product < ApplicationRecord
-  enum type: {food: 0, drink: 1}
+  enum product_type: {food: 0, drink: 1}
   enum is_delete: {exist: 0, deleted: 1}
 
   attr_accessor :quantity_in_cart, :total_price_in_cart
@@ -18,12 +18,12 @@ class Product < ApplicationRecord
   validates :price, presence: true, numericality: {only_float: true}
   validates :inventory, presence: true,
     numericality: {only_integer: true, greater_than_or_equal_to: Settings.minimum_inventory}
-  validates :type, presence: true
+  validates :product_type, presence: true
 
   scope :actived, ->{where(is_delete: :exist)}
   scope :search_by_name, ->(name){where("name like ?", "%#{name}%")}
   scope :category_id, ->(category_id){where(category_id: category_id) if category_id.first.present?}
-  scope :types, ->(type){where(type: type) if type.first.present?}
+  scope :types, ->(product_type){where(product_type: product_type) if product_type.first.present?}
   scope :order_by, ->(column){order("#{column} asc")}
   mount_uploaders :images, ImageUploader
 
