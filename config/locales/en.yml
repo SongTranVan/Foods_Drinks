@@ -111,7 +111,7 @@ en:
     edit:
       title: "Edit User"
       header: "Update your profile"
-      button_text: "Update profile"
+      button_text: "Update"
     index:
       title: "All Users"
       header: "All Users"
