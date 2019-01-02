@@ -24,6 +24,7 @@ gem "will_paginate", "3.1.6"
 gem "bootstrap-will_paginate", "1.0.0"
 gem "figaro"
 gem "i18n-js"
+gem 'pg', '~> 0.20'
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
