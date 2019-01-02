@@ -1,32 +1,48 @@
 <%= provide :title, t(".title") %>
-<body class="index">
-  <div class="center">
-    <h1 class="home">Foods & Drinks</h1>
-    <h2 class="home">
-      Foods & Drinks
-    </h2>
-    <p class="bt_position"><%= link_to t(".signup_link"), signup_path, class: "btn btn-lg btn-outline-danger" %></p>
+<div class="container">
+  <div class="row">
+      <div class="col">
+          <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                  <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                  <li class="breadcrumb-item"><a href="category.html">Category</a></li>
+                  <li class="breadcrumb-item active" aria-current="page">Sub-category</li>
+              </ol>
+          </nav>
+      </div>
   </div>
-  <div class="row filter">
-    <div class="col-md-6 col-md-offset-3">
-      <div class="panel">
-        <%= form_tag products_path, method: :get, remote: true, class:"panel-body form-group" do %>
-          <%= select_tag :types, select_product_type, {include_blank: t(".all"), class: "form-input"} %>
-          <%= select_tag :category_id, select_category,
-            {multiple: true, include_blank: t(".all"), size: 3, class: "form-input"} %>
-          <%= select_tag :order_by, select_type_filter, {class: "form-input"} %>
-          <%= submit_tag t(".filter"), class:"btn btn-info" %>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-12 col-sm-3">
+      <div class="card bg-light mb-3">
+        <div class="card-header text-white text-uppercase" style="background: brown;">
+          <i class="fa fa-list"></i> Categories
+        </div>
+        <ul class="list-group category_block" id="ulli">
+            <li class="list-group-item text-center text-uppercase"><a href="category.html">All</a></li>
+            <li class="list-group-item text-center text-uppercase"><a href="category.html">Foods</a></li>
+            <li class="list-group-item text-center text-uppercase"><a href="category.html">Drinks</a></li>
+        </ul>
+    </div>
+    <div class="card bg-light mb-3">
+      <div class="card-header text-white text-uppercase" style="background: brown;font-size: 11px;">OURS NEW PRODUCT</div>
+      <div class="card-body">
+        <% @new_products.each do |new_product|%>
+        <img class="" src="product_images/drinks/tocotoco-trasua.jpg" />
+        <h5 class="card-title"><b><%= new_product.name %></b></h5>
+        <p class="card-text"><%= new_product.description %></p>
+        <p id="giatien" class="bloc_left_price"><%= number_to_currency new_product.price %></p>
         <% end %>
       </div>
     </div>
   </div>
-  <div class="products-list">
-    <h2 class="h2-index"><%= t ".header" %></h2>
-    <div class="container">
-      <%= will_paginate @products %>
-      <div class="row products">
-        <%= render @products %>
-      </div>
+  <div class="col">
+    <div class="row">
+      <%= render @products %>
+    </div>
+    <div class="row">
+      <%= will_paginate @products, :class => "pagination" %>
     </div>
   </div>
-</body>
+</div>

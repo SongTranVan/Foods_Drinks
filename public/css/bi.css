@@ -389,7 +389,29 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
 @media only screen and (max-width:990px){.product-grid9{margin-bottom:30px}
 }
 
-
+#ulli li{
+    margin-left: -13px;
+    margin-right: -14px;
+}
+#giatien {
+    font-weight: 700;
+    font-size: larger;
+    text-align: center;
+}
+.card-body img {
+    width: 195px;
+    height: 155px;
+    padding-left: -1px;
+    margin-left: -34px;
+}
+.card-header {
+    background: brown;
+    font-size: 11px;
+    margin: 0px -14px;
+}
+.card-title{
+    margin-top: 10px;
+}
 .preview {
   display: -webkit-box;
   display: -webkit-flex;
@@ -435,7 +457,7 @@ h3.h3{text-align:center;margin:1em;text-transform:capitalize;font-size:1.7em;}
             animation-duration: .3s; }
 
 .card {
-  margin-top: 50px;
+  margin-top: 1px;
   background: #eee;
   padding: 3em;
   line-height: 1.5em; }
@@ -765,3 +787,37 @@ padding : 50px 0;
 #myTabContent label{
     color: black;
 }
+
+.pagination {
+    display: inline-block;
+}
+
+.pagination li {
+    float: left;
+    color: white;
+    float: left;
+}
+
+.pagination li.active {
+    background-color: rgb(197, 12, 21);
+    color: white;
+    border-radius: 5px;
+}
+
+.pagination a {
+
+color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+    transition: background-color .3s;
+    border-radius: 5px;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {background-color: rgb(221, 42, 42);}

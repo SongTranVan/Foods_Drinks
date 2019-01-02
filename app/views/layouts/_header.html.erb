@@ -4,6 +4,7 @@
             <div class="header-top d-flex justify-content-between align-items-center navbar-expand-md">
                 <div class="col menu-left">
                     <%= link_to "HOME", root_path %>
+                    <%= link_to "ORDER NOW", products_path %>
                     <%= link_to "FOOD", products_path(category_id: 1) %>
                     <%= link_to "DRINK", products_path(category_id: 2) %>
                 </div>
@@ -33,9 +34,10 @@
                             </li>
                             
                             <% if logged_in? %>
-                                <%= render "layouts/user" %>
-                                <% if admin? %>
-                                <%= render "layouts/admin" %>
+                                <% if admin? %>                                
+                                    <%= render "layouts/admin" %>
+                                <% else %>
+                                    <%= render "layouts/user" %>
                                 <% end %>
                             <% else %>
                                 <li class="nav-item">
@@ -53,19 +55,6 @@
                         </ul>
                     </div>
                 </nav>
-            </div>
-        </div>
-        <div class="row" style="padding-top: 20px;">
-            <div class="col-lg-2"></div>
-            <div class="col-lg-8">
-            <%= form_tag products_path, method: :get, class: "navbar-form navbar-search", role: :search do %>
-                <div class="input-group">
-                    <%= text_field_tag :search_by_name, "", class: "form-control", style:"padding: 25px"%>
-                    <div class="input-group-btn">
-                        <%= submit_tag t("search"),id: "btnSearch", class: "btn btn-search btn-default" %>
-                    </div>
-                </div>
-            <% end %>
             </div>
         </div>
     </div>

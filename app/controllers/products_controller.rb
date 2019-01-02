@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :load_filter, only: :index
 
   def index
+    @new_products = Product.get_newest_product
     filtering_params(params).each do |key, value|
       @products = @products.public_send(key, value) if value.present?
     end

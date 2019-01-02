@@ -27,6 +27,7 @@ class Product < ApplicationRecord
   scope :order_by, ->(column){order("#{column} asc")}
   scope :get_hot_food, ->{where("category_id = 1 AND avg_rate > 4.5")}
   scope :get_hot_drink, ->{where("category_id = 2 AND avg_rate > 4.5")}
+  scope :get_newest_product, -> {order(created_at: :desc).limit(1)}
   mount_uploaders :images, ImageUploader
 
   def change_in_cart quantity

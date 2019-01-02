@@ -1,6 +1,6 @@
 remember_me: "1"
 minimum_value: 1
-per_page_value: 8
+per_page_value: 9
 increase_quantity: 1
 minimum_inventory: 0
 default_inventory: 10

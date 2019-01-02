@@ -1,6 +1,6 @@
 <li class="nav-item dropdown">
   <%= link_to "#", "data-toggle": "dropdown",id: "navbardrop", class: "nav-link dropdown-toggle" do %>
-    <%= t "account_text" %> <b class="caret"></b>
+    <%= current_user.name %><b class="caret"></b>
   <% end %>
   <ul class="dropdown-menu">
     <li class="dropdown-item">
