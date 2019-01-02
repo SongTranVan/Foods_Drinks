@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20180622074730) do
     t.string "description"
     t.float "price"
     t.integer "inventory"
-    t.string "product_type"
+    t.integer "product_type", default: 0
     t.float "avg_rate", default: 5.0
     t.integer "count_rate", default: 1
     t.integer "category_id"
